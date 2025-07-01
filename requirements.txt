@@ -1,0 +1,4 @@
+torch
+chatterbox-tts
+scrapy
+htmlparser
