@@ -1,2 +1,2 @@
 #Installation
-pip install chatterbox-tts
+pip install -r requirements.txt
