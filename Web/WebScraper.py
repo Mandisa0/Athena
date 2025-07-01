@@ -1,8 +1,23 @@
 import requests
-from html.parser import HTMLParser
+from bs4 import BeautifulSoup
 
-response = requests.get("https://www.enca.com/")
-print("Status Code:", response.status_code)
-if response.status_code == 200:
-    print("Successfully fetched the webpage.")
-    print("Content:", response.text[:1000])  # Print the first 1000 characters of the content
+class WebScraper:
+    def __init__(self, url):
+        self.url = url
+
+    def fetch_content(self):
+        response = requests.get(self.url)
+        print("Status Code:", response.status_code)
+        scrape_response = ''
+
+        if response.status_code == 200:
+            soup = BeautifulSoup(response.text, 'html.parser')  # Get a slice of the text content
+            paragraphs = soup.find_all('p')
+            for paragraph in paragraphs:
+                if 'data-component' in paragraph.parent.attrs:
+                    scrape_response += paragraph.getText()
+        
+        return scrape_response
+    
+# a = WebScraper('https://www.bbc.com/news/articles/cp9005z1pljo')
+# print(a.fetch_content())

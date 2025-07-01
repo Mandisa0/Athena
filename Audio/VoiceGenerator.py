@@ -1,5 +1,6 @@
 import torchaudio
 from chatterbox.tts import ChatterboxTTS
+from datetime import datetime
 
 class VoiceGenerator:
 
@@ -15,4 +16,7 @@ class VoiceGenerator:
         # If you want to synthesize with a different voice, specify the audio prompt
         AUDIO_PROMPT_PATH="Apiesdoring Drive.wav"
         wav = self.model.generate(text, audio_prompt_path=AUDIO_PROMPT_PATH)
-        torchaudio.save("test-2.wav", wav, self.model.sr)
+        current_datetime = datetime.now()
+        filename = "Audio/Output/Audio_"+current_datetime.strftime("%Y_%m_%d_%H_%M_%S") + ".wav"
+        print(filename)
+        torchaudio.save(filename, wav, self.model.sr)

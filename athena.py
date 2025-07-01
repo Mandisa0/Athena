@@ -1,4 +1,9 @@
 import Audio.VoiceGenerator as VoiceGenerator
+import Web.WebScraper as WebScraper
 
-audioC = VoiceGenerator.VoiceGenerator()
-audioC.generate_audio("I am the God Of War! I will make you suffer! None Shall Defy Me! I will have my revenge!")
+audio = VoiceGenerator.VoiceGenerator()
+web = WebScraper.WebScraper('https://www.bbc.com/news/articles/cp9005z1pljo')
+web_content = web.fetch_content().split('.')
+
+for content in web_content:
+    audio.generate_audio(content)

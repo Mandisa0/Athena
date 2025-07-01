@@ -1,4 +1,4 @@
 torch
 chatterbox-tts
 scrapy
-htmlparser
+beautifulsoup4
