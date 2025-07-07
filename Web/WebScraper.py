@@ -11,13 +11,10 @@ class WebScraper:
         scrape_response = ''
 
         if response.status_code == 200:
-            soup = BeautifulSoup(response.text, 'html.parser')  # Get a slice of the text content
+            soup = BeautifulSoup(response.text, 'html.parser')
             paragraphs = soup.find_all('p')
             for paragraph in paragraphs:
                 if 'data-component' in paragraph.parent.attrs:
                     scrape_response += paragraph.getText()
         
-        return scrape_response
-    
-# a = WebScraper('https://www.bbc.com/news/articles/cp9005z1pljo')
-# print(a.fetch_content())
+        return scrape_response[0:300]

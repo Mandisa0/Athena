@@ -2,3 +2,4 @@ torch
 chatterbox-tts
 scrapy
 beautifulsoup4
+pydub
