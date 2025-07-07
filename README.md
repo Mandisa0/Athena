@@ -1,5 +1,7 @@
-### Installation
-pip install -r requirements.txt
+# pip install -r requirements.txt
 
-### Generated Audio Sample
-[🔊 Audio File](Audio/Output/Combined_Audio2025_07_07_10_10_12.wav)
+# Generated Audio Sample
+<audio controls>
+  <source src="Audio/Output/Combined_Audio2025_07_07_10_10_12.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
