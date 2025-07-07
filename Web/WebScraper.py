@@ -17,4 +17,4 @@ class WebScraper:
                 if 'data-component' in paragraph.parent.attrs:
                     scrape_response += paragraph.getText()
         
-        return scrape_response[0:300]
+        return scrape_response
