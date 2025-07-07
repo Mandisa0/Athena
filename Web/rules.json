@@ -1,0 +1,14 @@
+{
+    "nasa": [
+        {
+            "parent_attr": "data-content-type", 
+            "parent_attr_value": "blog-entry"
+        }
+    ],
+    "bbc": [
+        {
+            "parent_attr": "data-component", 
+            "parent_attr_value": "text-block"
+        }
+    ]
+}

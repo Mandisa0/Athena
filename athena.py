@@ -5,7 +5,7 @@ import os
 
 audio = VoiceGenerator.VoiceGenerator()
 audio_editor = AudioEditor.AudioEditor()
-web = WebScraper.WebScraper('https://www.bbc.com/news/articles/cg4r5wylwq6o')
+web = WebScraper.WebScraper('https://www.nasa.gov/blogs/spacestation/2025/07/03/progress-cargo-craft-launches-to-station-for-saturday-delivery/', parent_attr='data-content-type', parent_attr_value='blog-entry')
 web_content = web.fetch_content().split('.')
 filenames = []
 

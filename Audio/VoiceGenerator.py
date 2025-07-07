@@ -6,7 +6,7 @@ class VoiceGenerator:
 
     def __init__(self):
         self.name = 1
-        self.model = ChatterboxTTS.from_pretrained(device="cpu")
+        self.model = ChatterboxTTS.from_pretrained(device="cuda")
 
     def generate_audio(self, text):
         AUDIO_PROMPT_PATH="Audio/Sample/mandisa_voice.wav"
