@@ -12,12 +12,12 @@ print(script_root)
 #https://www.nasa.gov/blogs/spacestation/2025/07/03/progress-cargo-craft-launches-to-station-for-saturday-delivery/
 
 @app.get("/generate")
-def generate(url: str):
+def generate(url: str, parent_attr: str, parent_attr_value: str):
     
     try:
         audio = VoiceGenerator.VoiceGenerator()
         audio_editor = AudioEditor.AudioEditor()
-        web = WebScraper.WebScraper(f"{url}", parent_attr='data-content-type', parent_attr_value='blog-entry')
+        web = WebScraper.WebScraper(url = {url}, parent_attr = {parent_attr}, parent_attr_value = {parent_attr_value})
         web_content = web.fetch_content().split('.')
         filenames = []
 
