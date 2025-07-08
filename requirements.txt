@@ -7,3 +7,5 @@ chatterbox-tts
 scrapy
 beautifulsoup4
 pydub
+fastapi
+uvicorn

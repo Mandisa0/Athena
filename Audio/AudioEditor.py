@@ -13,5 +13,6 @@ class AudioEditor:
             combined += audio_segment
             current_datetime = datetime.now()
         
-        combined.export("Audio/Output/Combined_Audio"+current_datetime.strftime("%Y_%m_%d_%H_%M_%S")+".wav", format="wav")
-        return combined
+        file_path = "Audio/Output/Combined_Audio" + current_datetime.strftime("%Y_%m_%d_%H_%M_%S") + ".wav"
+        combined.export(file_path, format="wav")
+        return file_path
